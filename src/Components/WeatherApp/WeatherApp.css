@@ -1,3 +1,15 @@
+.card-title {
+  width: 100%; /* Adjust width as needed */
+  font-size: 40px; /* Increase font size */
+  font-weight: bold; /* Add bold font weight */
+  text-align: center; /* Center-align the text */
+  color: #3b2f80; /* Set text color */
+  margin-bottom: -42px;
+  font-family: "Arial", sans-serif; /* Specify font family */
+  text-transform: uppercase; /* Convert text to uppercase */
+  letter-spacing: 2px; /* Add letter spacing for emphasis */
+}
+
 .container {
   width: 607px;
   height: 829px;

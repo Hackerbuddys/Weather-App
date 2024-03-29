@@ -15,6 +15,7 @@ function WeatherApp() {
   const [wicon, setWicon] = useState(cloud_icon);
 
   const search = async () => {
+    console.log("button clicked -------");
     const element = document.getElementsByClassName("CityInput");
     if (element[0].value === "") {
       return 0;
@@ -24,6 +25,8 @@ function WeatherApp() {
 
     let response = await fetch(url);
     let data = await response.json();
+
+    console.log("data--------------->>>>>>>>>>>>>", data);
 
     const humidity = document.getElementsByClassName("humidity-percent");
     const wind = document.getElementsByClassName("wind-rate");
@@ -72,38 +75,39 @@ function WeatherApp() {
     }
   };
   return (
-    <div className="container">
-      <div className="top-bar">
-        <input
-          type="text"
-          className="CityInput"
-          placeholder="search"
-          onClick={() => {
-            search();
-          }}
-        />
-        <div className="search-icon">
-          <img src={search_icon} alt="" />
-        </div>
-      </div>
-      <div className="weather-image">
-        <img src={wicon} alt="" />
-      </div>
-      <div className="weather-temp">24°c</div>
-      <div className="weather-location">London, UK</div>
-      <div className="data-container">
-        <div className="element">
-          <img src={humidity_icon} alt="" className="icon" />
-          <div className="data">
-            <div className="humidity-percent">60%</div>
-            <div className="text">Humidity</div>
+    <div>
+      <h5 className="card-title ">Weather App</h5>
+      <div className="container">
+        <div className="top-bar">
+          <input type="text" className="CityInput" placeholder="search" />
+          <div
+            className="search-icon"
+            onClick={() => {
+              search();
+            }}
+          >
+            <img src={search_icon} alt="" />
           </div>
         </div>
-        <div className="element">
-          <img src={wind_icon} alt="" className="icon" />
-          <div className="data">
-            <div className="wind-rate">18 km/h</div>
-            <div className="text">Wind Speed</div>
+        <div className="weather-image">
+          <img src={wicon} alt="" />
+        </div>
+        <div className="weather-temp">24°c</div>
+        <div className="weather-location">London, UK</div>
+        <div className="data-container">
+          <div className="element">
+            <img src={humidity_icon} alt="" className="icon" />
+            <div className="data">
+              <div className="humidity-percent">60%</div>
+              <div className="text">Humidity</div>
+            </div>
+          </div>
+          <div className="element">
+            <img src={wind_icon} alt="" className="icon" />
+            <div className="data">
+              <div className="wind-rate">18 km/h</div>
+              <div className="text">Wind Speed</div>
+            </div>
           </div>
         </div>
       </div>
